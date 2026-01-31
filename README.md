@@ -67,6 +67,9 @@ You can deploy this project using various platforms like:
 - GitHub Pages
 - Or any other static site hosting service
 
+### Apache Deployment (.htaccess)
+This project includes a `.htaccess` file in the `public` directory to handle Single Page Application (SPA) routing on Apache servers. This ensures that refreshing sub-routes (e.g., `/about`) works correctly in production by redirecting all requests to `index.html`.
+
 ## I want to use a custom domain - is that possible?
 
 Yes, you can use a custom domain with any of the deployment platforms mentioned above. Each platform has its own documentation for setting up custom domains.
