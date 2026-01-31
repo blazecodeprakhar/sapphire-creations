@@ -68,7 +68,12 @@ You can deploy this project using various platforms like:
 - Or any other static site hosting service
 
 ### Apache Deployment (.htaccess)
-This project includes a `.htaccess` file in the `public` directory to handle Single Page Application (SPA) routing on Apache servers. This ensures that refreshing sub-routes (e.g., `/about`) works correctly in production by redirecting all requests to `index.html`.
+This project includes a `.htaccess` file in the `public` directory to handle Single Page Application (SPA) routing on Apache servers. It has been configured to:
+- **Enforce HTTPS**: Automatically redirects all HTTP traffic to HTTPS.
+- **Set Security Headers**: Includes HSTS, X-Frame-Options, X-Content-Type-Options, and more for improved security.
+- **Handle Routing**: Redirects all non-file/directory requests to `index.html`.
+
+**Note**: For these security features to work, your server must have an SSL certificate installed and `mod_rewrite` and `mod_headers` enabled.
 
 ## I want to use a custom domain - is that possible?
 
